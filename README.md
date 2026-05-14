@@ -1,6 +1,6 @@
 # ☁️ Multi-Cloud Manager
 
-[![Go Version](https://img.shields.io/github/go-mod/go-version/rakrsh/multi-cloud-manager?filename=backend%2Fgo.mod)](https://go.dev/)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/rakrsh/multi-cloud-manager?logo=go)](https://go.dev/)
 [![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF)](https://vitejs.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
