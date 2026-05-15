@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProviderType } from '../context/ProviderContext';
+import { ProviderType } from '../context/providerContext';
 import { useProvider } from '../context/useProvider';
 import { LayoutDashboard, Cloud, ShieldCheck, Settings, Bell } from 'lucide-react';
 
