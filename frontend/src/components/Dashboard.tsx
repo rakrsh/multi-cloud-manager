@@ -1,4 +1,4 @@
-import { useProvider } from '../context/ProviderContext';
+import { useProvider } from '../context/useProvider';
 import { Activity, Server, Database, ShieldAlert, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
