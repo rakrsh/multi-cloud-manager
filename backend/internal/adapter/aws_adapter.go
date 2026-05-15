@@ -2,7 +2,6 @@ package adapter
 
 import (
 	"context"
-	"fmt"
 	"time"
 	"github.com/rakrsh/multi-cloud-manager/backend/internal/models"
 )

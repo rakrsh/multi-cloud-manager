@@ -1,5 +1,6 @@
 import React from 'react';
-import { useProvider, ProviderType } from '../context/ProviderContext';
+import { ProviderType } from '../context/providerContext';
+import { useProvider } from '../context/useProvider';
 import { LayoutDashboard, Cloud, ShieldCheck, Settings, Bell } from 'lucide-react';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {

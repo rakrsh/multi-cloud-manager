@@ -1,30 +1,16 @@
-linters-settings:
-  govet:
-    check-shadowing: true
-  golint:
-    min-confidence: 0.8
-  gocyclo:
-    min-complexity: 15
-  maligned:
-    suggest-new: true
-  dupl:
-    threshold: 100
-  goconst:
-    min-len: 3
-    min-occurrences: 3
+version: "2"
+
+run:
+  timeout: 5m
+  go: "1.26"
 
 linters:
+  default: none
   enable:
     - govet
     - errcheck
     - staticcheck
-    - unused
-    - gosimple
-    - structcheck
-    - varcheck
     - ineffassign
-    - deadcode
-    - typecheck
     - bodyclose
     - gocyclo
     - goconst
@@ -33,8 +19,24 @@ linters:
     - misspell
     - prealloc
     - nakedret
+    - revive
+  settings:
+    govet:
+      enable-all: true
+      disable:
+        - fieldalignment
+    gocyclo:
+      min-complexity: 15
+    goconst:
+      min-len: 3
+      min-occurrences: 3
+    revive:
+      rules:
+        - name: exported
+          disabled: true
+        - name: package-comments
+          disabled: true
 
 issues:
-  exclude-use-default: false
   max-issues-per-linter: 0
   max-same-issues: 0
