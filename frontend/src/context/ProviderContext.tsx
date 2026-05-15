@@ -1,8 +1,8 @@
 import { useState, ReactNode } from 'react';
-import { ProviderContext } from './providerContext';
+import { ProviderContext, ProviderType } from './providerContext';
 
 export const ProviderProvider = ({ children }: { children: ReactNode }) => {
-  const [activeProvider, setActiveProvider] = useState('ALL' as const);
+  const [activeProvider, setActiveProvider] = useState<ProviderType>('ALL');
 
   return (
     <ProviderContext.Provider value={{ activeProvider, setActiveProvider }}>
