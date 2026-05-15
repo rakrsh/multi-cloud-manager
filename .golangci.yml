@@ -1,12 +1,14 @@
+run:
+  timeout: 5m
+  go: "1.26"
+
 linters-settings:
   govet:
-    check-shadowing: true
-  golint:
-    min-confidence: 0.8
+    enable-all: true
+    disable:
+      - fieldalignment
   gocyclo:
     min-complexity: 15
-  maligned:
-    suggest-new: true
   dupl:
     threshold: 100
   goconst:
@@ -14,16 +16,14 @@ linters-settings:
     min-occurrences: 3
 
 linters:
+  disable-all: true
   enable:
     - govet
     - errcheck
     - staticcheck
     - unused
     - gosimple
-    - structcheck
-    - varcheck
     - ineffassign
-    - deadcode
     - typecheck
     - bodyclose
     - gocyclo
@@ -33,6 +33,7 @@ linters:
     - misspell
     - prealloc
     - nakedret
+    - revive
 
 issues:
   exclude-use-default: false
