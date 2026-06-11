@@ -17,6 +17,7 @@ The Multi-Cloud Manager is a centralized dashboard for monitoring AWS, Azure, GC
 - `frontend/src/context/ProviderContext.tsx`: Active environment state.
 - `frontend/src/index.css`: Glassmorphism design tokens.
  - `architecture/`: C4 PlantUML source for system and container diagrams. Keep diagrams in sync with code.
+ - `architecture/`: Canonical architecture sources and exports. `diagram.mmd` is the canonical Mermaid C4 source — update it when code changes affect architecture. PlantUML sources may remain for reference but are secondary.
 
 ## Workflow Requirements
 1. **Normalization:** Never return raw vendor JSON to the frontend; always normalize it through the adapter layer.

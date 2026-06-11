@@ -6,6 +6,8 @@ Files:
 - `diagram.puml` — Contains System Context and Container diagrams in C4-PlantUML format.
 
 - `diagram.c4.md` — C4-style diagrams authored as Mermaid so they render directly in GitHub Markdown.
+ - `diagram.c4.md` — Convenience wrapper that points to the canonical Mermaid source.
+ - `diagram.mmd` — Canonical Mermaid source (single-source of truth for diagrams).
 
 Rendering
 
@@ -30,6 +32,8 @@ Exports
 Preview
 
 - Mermaid C4 (renders on GitHub): [diagram.c4.md](diagram.c4.md)
+
+- Canonical Mermaid source: [diagram.mmd](diagram.mmd)
 
 - PlantUML SVG export preview (if generated):
 

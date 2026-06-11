@@ -1,0 +1,36 @@
+name: Render Mermaid diagrams
+
+on:
+  push:
+    paths:
+      - 'architecture/diagram.mmd'
+      - '.github/workflows/render-mermaid.yml'
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install mermaid-cli
+        run: |
+          npm ci --silent || true
+          npm install -g @mermaid-js/mermaid-cli@10
+
+      - name: Render Mermaid to SVG
+        run: |
+          mkdir -p architecture/exports
+          mmdc -i architecture/diagram.mmd -o architecture/exports/diagram.svg || true
+
+      - name: Commit exported diagrams
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: github-actions@github.com
+          message: "chore: render Mermaid diagram"
+          add: 'architecture/exports/diagram.svg'

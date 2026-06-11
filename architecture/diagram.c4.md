@@ -1,44 +1,9 @@
-<!-- C4-style diagrams rendered with Mermaid -->
+<!-- This file previously contained Mermaid diagrams. It now references the canonical Mermaid source `diagram.mmd`. -->
 
 # Multi-Cloud Manager — C4 (Mermaid)
 
-## System Context
+This file is kept for convenience. The canonical single-source for Mermaid diagrams is `diagram.mmd`.
 
-```mermaid
-%%{init: {'theme':'github'}}%%
-flowchart LR
-  A[Administrator]\n"(uses)" --> B[Web UI\nReact + Vite]
-  B --> C[Backend API\nGo (Gin)]
-  C --> D[AWS]
-  C --> E[Azure]
-  C --> F[GCP]
-  C --> G[Salesforce]
-  C --> H[(Cache / Storage)]
-  style A fill:#f9f,stroke:#333,stroke-width:1px
-  style B fill:#bbf,stroke:#333,stroke-width:1px
-  style C fill:#bfb,stroke:#333,stroke-width:1px
-```
+Canonical source: [diagram.mmd](diagram.mmd)
 
-## Container Diagram
-
-```mermaid
-%%{init: {'theme':'github'}}%%
-flowchart TB
-  subgraph MCM [Multi-Cloud Manager]
-    direction TB
-    FE[Web UI\nReact + Vite]
-    BE[Backend API\nGo (Gin)\nOrchestrator + Adapters]
-    DB[(Cache / Storage)]
-  end
-
-  Admin[Administrator] --> FE
-  FE --> BE
-  BE --> AWS[AWS]
-  BE --> AZ[Azure]
-  BE --> GCP[GCP]
-  BE --> SF[Salesforce]
-  BE --> DB
-```
-
-Notes
-- This file uses standard Mermaid flowcharts to represent C4-style System Context and Container diagrams so they render directly on GitHub README/Markdown pages.
+If you edit diagrams, update `diagram.mmd` (the Mermaid source) and update `architecture/exports/` by running the local render command or waiting for the CI renderer.
