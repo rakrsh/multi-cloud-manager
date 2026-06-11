@@ -18,3 +18,10 @@ The frontend is a modern SPA designed for high-density data visualization.
 - **Tailwind CSS v4:** Utility-first CSS with a custom "Glassmorphism" theme.
 - **TanStack Query:** Efficient server-state management and caching.
 - **Recharts:** Responsive charts for resource monitoring.
+
+## Architecture Diagrams
+
+The repository includes canonical architecture diagrams in C4 PlantUML format. The source for these diagrams lives in the `architecture/` folder at the repository root.
+
+- Diagram source: [architecture/diagram.puml](../architecture/diagram.puml)
+- Rendering instructions: [architecture/README.md](../architecture/README.md)

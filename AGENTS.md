@@ -16,6 +16,7 @@ The Multi-Cloud Manager is a centralized dashboard for monitoring AWS, Azure, GC
 - `backend/internal/models/resource.go`: The Universal Schema.
 - `frontend/src/context/ProviderContext.tsx`: Active environment state.
 - `frontend/src/index.css`: Glassmorphism design tokens.
+ - `architecture/`: C4 PlantUML source for system and container diagrams. Keep diagrams in sync with code.
 
 ## Workflow Requirements
 1. **Normalization:** Never return raw vendor JSON to the frontend; always normalize it through the adapter layer.
@@ -25,3 +26,8 @@ The Multi-Cloud Manager is a centralized dashboard for monitoring AWS, Azure, GC
 ## Documentation
 - Main documentation is in `docs/` and managed via MkDocs.
 - Deployments are handled automatically by `.github/workflows/deploy-docs.yml`.
+
+## Architecture Maintenance
+
+- When making source-level changes that affect system boundaries, adapters, or containers, update the C4 diagrams in the `architecture/` folder and the narrative in `docs/architecture.md`.
+- Diagram source: [architecture/diagram.puml](architecture/diagram.puml)

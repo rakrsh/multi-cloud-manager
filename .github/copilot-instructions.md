@@ -19,3 +19,9 @@
 ## Documentation
 - Document all public functions in Go.
 - Use MkDocs for user-facing documentation.
+
+## Architecture Diagrams
+
+- Maintain canonical C4 diagrams in the repository `architecture/` folder. When source-level changes alter system boundaries, containers, or adapter responsibilities, update the PlantUML sources in `architecture/` and the explanatory text in `docs/architecture.md`.
+
+- Diagram source: `architecture/diagram.puml` (render with PlantUML or the VSCode PlantUML extension).
