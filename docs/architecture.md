@@ -27,7 +27,7 @@ The repository includes canonical architecture diagrams in C4 PlantUML format. T
 - Rendering instructions: [architecture/README.md](../architecture/README.md)
 
 - Mermaid C4 (renders directly on GitHub): [architecture/diagram.c4.md](../architecture/diagram.c4.md)
-- Canonical Mermaid source: [architecture/diagram.mmd](../architecture/diagram.mmd)
+- Canonical Mermaid source (served on the docs site): [architecture/diagram.mmd](architecture/diagram.mmd)
 
 Preview diagram
 
