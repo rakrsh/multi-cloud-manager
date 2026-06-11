@@ -1,0 +1,39 @@
+name: Render PlantUML diagrams
+
+on:
+  push:
+    paths:
+      - 'architecture/**.puml'
+      - '.github/workflows/render-plantuml.yml'
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install PlantUML and Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y plantuml graphviz
+
+      - name: Render PlantUML to SVG
+        run: |
+          mkdir -p architecture/exports
+          for f in architecture/*.puml; do
+            plantuml -tsvg -o architecture/exports "$f" || true
+          done
+
+      - name: Commit exported diagrams
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions
+          author_email: github-actions@github.com
+          message: "chore: render PlantUML diagrams"
+          add: 'architecture/exports'
