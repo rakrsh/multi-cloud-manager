@@ -1,0 +1,40 @@
+@startuml
+' C4 System Context and Container diagrams using C4-PlantUML
+!define C4P https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master
+!includeurl C4P/C4_Context.puml
+!includeurl C4P/C4_Container.puml
+
+' System Context
+LAYOUT_WITH_LEGEND()
+
+Person(admin, "Administrator", "Operates the Multi-Cloud Manager")
+
+System_Boundary(mcm, "Multi-Cloud Manager") {
+  System_Ext(aws, "AWS", "Cloud provider")
+  System_Ext(azure, "Azure", "Cloud provider")
+  System_Ext(gcp, "GCP", "Cloud provider")
+  System_Ext(sf, "Salesforce", "SaaS provider")
+
+  System(mcm_system, "Multi-Cloud Manager", "Aggregates and normalizes cloud provider data")
+}
+
+Rel(admin, mcm_system, "Uses")
+Rel(mcm_system, aws, "Fetches resources via provider APIs")
+Rel(mcm_system, azure, "Fetches resources via provider APIs")
+Rel(mcm_system, gcp, "Fetches resources via provider APIs")
+Rel(mcm_system, sf, "Fetches SaaS data via REST API")
+
+' Container Diagram
+Container_Boundary(mcm_containers, "Multi-Cloud Manager") {
+  Container(backend, "Backend API", "Go (Gin)", "Orchestrates provider adapters, normalizes to Universal Schema")
+  Container(frontend, "Web UI", "React + Vite", "Dashboard UI using TanStack Query and Tailwind CSS")
+  Container(db, "Cache / Storage", "Redis/Postgres (optional)", "Short-lived caching and persistence for normalization results")
+}
+
+Rel(admin, frontend, "Interacts with (browser)")
+Rel(frontend, backend, "Calls API (REST/HTTP)")
+Rel(backend, aws, "Calls AWS APIs via adapter")
+Rel(backend, sf, "Calls Salesforce via adapter")
+Rel(backend, db, "Reads/Writes normalized resources")
+
+@enduml

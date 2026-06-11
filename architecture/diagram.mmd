@@ -1,0 +1,29 @@
+%% Mermaid canonical C4-style diagram for Multi-Cloud Manager
+%% This is the canonical single-source for architecture diagrams.
+
+flowchart TB
+  %% Nodes
+  Admin["Administrator"]
+  FE["Web UI<br/>React + Vite"]
+  BE["Backend API<br/>Go (Gin)"]
+  DB[(Cache / Storage)]
+  AWS["AWS"]
+  AZ["Azure"]
+  GCP["GCP"]
+  SF["Salesforce"]
+
+  %% Relationships
+  Admin -->|uses| FE
+  FE --> BE
+  BE --> AWS
+  BE --> AZ
+  BE --> GCP
+  BE --> SF
+  BE --> DB
+
+  %% Container grouping
+  subgraph MCM["Multi-Cloud Manager"]
+    FE
+    BE
+    DB
+  end

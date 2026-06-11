@@ -18,3 +18,19 @@ The frontend is a modern SPA designed for high-density data visualization.
 - **Tailwind CSS v4:** Utility-first CSS with a custom "Glassmorphism" theme.
 - **TanStack Query:** Efficient server-state management and caching.
 - **Recharts:** Responsive charts for resource monitoring.
+
+## Architecture Diagrams
+
+The repository includes canonical architecture diagrams in C4 PlantUML format. The source for these diagrams lives in the `architecture/` folder at the repository root.
+
+- Diagram source: [architecture/diagram.puml](../architecture/diagram.puml)
+- Rendering instructions: [architecture/README.md](../architecture/README.md)
+
+- Mermaid C4 (renders directly on GitHub): [architecture/diagram.c4.md](../architecture/diagram.c4.md)
+- Canonical Mermaid source: [architecture/diagram.mmd](../architecture/diagram.mmd)
+
+Preview diagram
+
+If images have been rendered (via the included GitHub Action), a preview will be available here:
+
+![Architecture diagram](../architecture/exports/diagram.svg)
