@@ -33,4 +33,4 @@ Preview diagram
 
 If images have been rendered (via the included GitHub Action), a preview will be available here:
 
-![Architecture diagram](../architecture/exports/diagram.svg)
+![Architecture diagram](architecture/exports/diagram.svg)

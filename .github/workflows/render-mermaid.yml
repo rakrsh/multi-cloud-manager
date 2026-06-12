@@ -26,6 +26,9 @@ jobs:
         run: |
           mkdir -p architecture/exports
           mmdc -i architecture/diagram.mmd -o architecture/exports/diagram.svg || true
+          # also copy rendered output into docs so MkDocs can include it in the site
+          mkdir -p docs/architecture/exports
+          cp architecture/exports/diagram.svg docs/architecture/exports/diagram.svg || true
 
       - name: Commit exported diagrams
         uses: EndBug/add-and-commit@v9
@@ -33,4 +36,6 @@ jobs:
           author_name: github-actions
           author_email: github-actions@github.com
           message: "chore: render Mermaid diagram"
-          add: 'architecture/exports/diagram.svg'
+          add: |
+            architecture/exports/diagram.svg
+            docs/architecture/exports/diagram.svg
