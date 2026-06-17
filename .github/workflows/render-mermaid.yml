@@ -31,7 +31,7 @@ jobs:
           cp architecture/exports/diagram.svg docs/architecture/exports/diagram.svg || true
 
       - name: Commit exported diagrams
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           author_name: github-actions
           author_email: github-actions@github.com
