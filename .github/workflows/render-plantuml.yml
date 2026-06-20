@@ -31,7 +31,7 @@ jobs:
           done
 
       - name: Commit exported diagrams
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           author_name: github-actions
           author_email: github-actions@github.com
