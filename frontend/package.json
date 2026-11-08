@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.10",
-    "@tailwindcss/vite": "^4.3.3",
-    "@tanstack/react-query": "^5.105.3",
+    "@tailwindcss/vite": "^4.3.4",
+    "@tanstack/react-query": "^5.105.1",
     "axios": "^1.21.0",
     "clsx": "^2.1.1",
     "lucide-react": "^1.66.0",
@@ -27,13 +27,13 @@
     "@types/react-dom": "^19.3.0",
     "globals": "^17.14.0",
     "typescript-eslint": "^8.72.1",
-    "@vitejs/plugin-react": "^6.1.2",
+    "@vitejs/plugin-react": "^6.2.1",
     "autoprefixer": "^10.6.2",
     "eslint": "^10.14.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.7",
     "postcss": "^8.5.32",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^4.3.4",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"
   }
